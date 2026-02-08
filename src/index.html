@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="sr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <title>你的名字 | 开发者 & 摄影师</title>
+    <meta name="keywords" content="开发者, 摄影师, 个人网站" />
+    <meta name="description" content="个人主页 - 分享代码与光影" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Lightbox for photo gallery -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="styles.scss" />
+    
+    <script
+      defer
+      src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <!-- **** Navigation **** -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#top">Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">关于</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#wechat">公众号</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#photography">摄影</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">项目</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">联系</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- **** Hero Section **** -->
+    <section id="hero" class="jumbotron">
+      <div class="container">
+        <h1 class="hero-title load-hidden">
+          你好，我是 <span class="text-color-main">你的名字</span>
+          <br />
+          代码与光影的记录者
+        </h1>
+        <p class="hero-subtitle load-hidden">
+          热爱编程，痴迷摄影，用文字与影像记录生活
+        </p>
+        <p class="hero-cta load-hidden">
+          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about">
+            了解更多
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- **** About Section **** -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title load-hidden">关于我</h2>
+        <div class="row about-wrapper">
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__image load-hidden">
+              <img
+                alt="Profile Image"
+                class="img-fluid rounded shadow-lg"
+                src="assets/profile.jpg"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__info load-hidden">
+              <p class="about-wrapper__info-text">
+                我是一名热爱技术与艺术的开发者。在代码的世界里，我追求简洁与高效；
+                在摄影的镜头下，我捕捉光影与故事。
+              </p>
+              <p class="about-wrapper__info-text">
+                工作之余，我喜欢背着相机走遍城市的角落，记录那些容易被忽视的美好瞬间。
+                同时，我也通过公众号分享技术心得与生活感悟。
+              </p>
+              <div class="about-skills">
+                <h4>技能标签</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">Python</span>
+                  <span class="skill-tag">React</span>
+                  <span class="skill-tag">Node.js</span>
+                  <span class="skill-tag">摄影</span>
+                  <span class="skill-tag">后期修图</span>
+                </div>
+              </div>
+              <span class="d-flex mt-4">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--resume"
+                  href="assets/resume.pdf"
+                >
+                  查看简历
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** WeChat Section **** -->
+    <section id="wechat" class="section-wechat">
+      <div class="container">
+        <h2 class="section-title load-hidden">微信公众号</h2>
+        <p class="section-subtitle load-hidden">分享技术、摄影与生活</p>
+        
+        <div class="row wechat-wrapper">
+          <div class="col-md-5 col-sm-12">
+            <div class="wechat-qr load-hidden">
+              <div class="qr-container">
+                <img
+                  src="assets/wechat-qr.png"
+                  alt="微信公众号二维码"
+                  class="qr-image"
+                />
+                <p class="qr-hint">扫码关注公众号</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 col-sm-12">
+            <div class="wechat-content load-hidden">
+              <h3 class="wechat-name">
+                <i class="fab fa-weixin"></i>
+                你的公众号名称
+              </h3>
+              <p class="wechat-desc">
+                这里是你公众号的简介。可以介绍你分享的内容类型，比如技术教程、摄影作品、生活随笔等。
+                让读者了解关注你的公众号能获得什么价值。
+              </p>
+              
+              <div class="wechat-highlights">
+                <h4>精选内容</h4>
+                <div class="highlight-cards">
+                  <div class="highlight-card">
+                    <i class="fas fa-code"></i>
+                    <h5>技术分享</h5>
+                    <p>前端开发、编程技巧</p>
+                  </div>
+                  <div class="highlight-card">
+                    <i class="fas fa-camera"></i>
+                    <h5>摄影教程</h5>
+                    <p>拍摄技巧、后期修图</p>
+                  </div>
+                  <div class="highlight-card">
+                    <i class="fas fa-book-open"></i>
+                    <h5>生活随笔</h5>
+                    <p>读书感悟、旅行日记</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="wechat-stats">
+                <div class="stat-item">
+                  <span class="stat-number">100+</span>
+                  <span class="stat-label">原创文章</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">1000+</span>
+                  <span class="stat-label">关注读者</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">50+</span>
+                  <span class="stat-label">技术教程</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Photography Section **** -->
+    <section id="photography" class="section-photography">
+      <div class="container">
+        <h2 class="section-title load-hidden">摄影作品</h2>
+        <p class="section-subtitle load-hidden">用镜头记录世界的美好</p>
+
+        <!-- Photo Filter -->
+        <div class="photo-filter load-hidden">
+          <button class="filter-btn active" data-filter="all">全部</button>
+          <button class="filter-btn" data-filter="landscape">风景</button>
+          <button class="filter-btn" data-filter="portrait">人像</button>
+          <button class="filter-btn" data-filter="street">街拍</button>
+          <button class="filter-btn" data-filter="nature">自然</button>
+        </div>
+
+        <!-- Photo Gallery -->
+        <div class="photo-gallery">
+          <!-- Photo 1 -->
+          <div class="photo-item landscape" data-category="landscape">
+            <a href="assets/photography/photo1.jpg" data-lightbox="gallery" data-title="山川日落">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo1-thumb.jpg" alt="山川日落" />
+                <div class="photo-info">
+                  <h4>山川日落</h4>
+                  <p>Shot on Sony A7M3</p>
+                  <span class="photo-date">2024.01</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="photo-item portrait" data-category="portrait">
+            <a href="assets/photography/photo2.jpg" data-lightbox="gallery" data-title="光影人像">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo2-thumb.jpg" alt="光影人像" />
+                <div class="photo-info">
+                  <h4>光影人像</h4>
+                  <p>Shot on Canon R6</p>
+                  <span class="photo-date">2024.02</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="photo-item street" data-category="street">
+            <a href="assets/photography/photo3.jpg" data-lightbox="gallery" data-title="城市街角">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo3-thumb.jpg" alt="城市街角" />
+                <div class="photo-info">
+                  <h4>城市街角</h4>
+                  <p>Shot on Fujifilm X-T4</p>
+                  <span class="photo-date">2024.03</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="photo-item nature" data-category="nature">
+            <a href="assets/photography/photo4.jpg" data-lightbox="gallery" data-title="晨雾森林">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo4-thumb.jpg" alt="晨雾森林" />
+                <div class="photo-info">
+                  <h4>晨雾森林</h4>
+                  <p>Shot on Nikon Z6</p>
+                  <span class="photo-date">2024.04</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 5 -->
+          <div class="photo-item landscape" data-category="landscape">
+            <a href="assets/photography/photo5.jpg" data-lightbox="gallery" data-title="海岸线">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo5-thumb.jpg" alt="海岸线" />
+                <div class="photo-info">
+                  <h4>海岸线</h4>
+                  <p>Shot on Sony A7M3</p>
+                  <span class="photo-date">2024.05</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 6 -->
+          <div class="photo-item street" data-category="street">
+            <a href="assets/photography/photo6.jpg" data-lightbox="gallery" data-title="夜色霓虹">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo6-thumb.jpg" alt="夜色霓虹" />
+                <div class="photo-info">
+                  <h4>夜色霓虹</h4>
+                  <p>Shot on Leica Q2</p>
+                  <span class="photo-date">2024.06</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 7 -->
+          <div class="photo-item nature" data-category="nature">
+            <a href="assets/photography/photo7.jpg" data-lightbox="gallery" data-title="花间蝶">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo7-thumb.jpg" alt="花间蝶" />
+                <div class="photo-info">
+                  <h4>花间蝶</h4>
+                  <p>Shot on Canon R6</p>
+                  <span class="photo-date">2024.07</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Photo 8 -->
+          <div class="photo-item portrait" data-category="portrait">
+            <a href="assets/photography/photo8.jpg" data-lightbox="gallery" data-title="窗前">
+              <div class="photo-overlay">
+                <img src="assets/photography/photo8-thumb.jpg" alt="窗前" />
+                <div class="photo-info">
+                  <h4>窗前</h4>
+                  <p>Shot on Sony A7M3</p>
+                  <span class="photo-date">2024.08</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 load-hidden">
+          <a
+            rel="noreferrer"
+            target="_blank"
+            class="cta-btn cta-btn--hero"
+            href="https://instagram.com/yourusername"
+          >
+            <i class="fab fa-instagram"></i> 查看更多作品
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Projects Section **** -->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">项目作品</h2>
+
+          <!-- Project 1 -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">个人博客系统</h3>
+                <div>
+                  <p class="mb-4">
+                    基于 React + Node.js 开发的个人博客系统，支持 Markdown 编辑、
+                    代码高亮、评论系统等功能。采用响应式设计，适配各种设备。
+                  </p>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-badge">React</span>
+                  <span class="tech-badge">Node.js</span>
+                  <span class="tech-badge">MongoDB</span>
+                </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="https://your-blog-demo.com"
+                >
+                  查看演示
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/yourusername/blog"
+                >
+                  源码
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="https://your-blog-demo.com" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/project.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">图片管理工具</h3>
+                <div>
+                  <p class="mb-4">
+                    为摄影师开发的图片管理工具，支持 EXIF 信息读取、批量重命名、
+                    快速筛选等功能。帮助摄影师高效管理海量照片。
+                  </p>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-badge">Python</span>
+                  <span class="tech-badge">PyQt</span>
+                  <span class="tech-badge">OpenCV</span>
+                </div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="https://github.com/yourusername/photo-manager/releases"
+                >
+                  下载使用
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="https://github.com/yourusername/photo-manager"
+                >
+                  源码
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="#" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/project.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Contact Section **** -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">联系我</h2>
+        <div class="contact-wrapper load-hidden">
+          <p class="contact-wrapper__text">
+            有项目合作想法？或者想交流摄影技巧？<br />
+            欢迎通过以下方式联系我
+          </p>
+          <div class="contact-methods">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              class="contact-btn"
+              href="mailto:your.email@example.com"
+            >
+              <i class="fas fa-envelope"></i>
+              <span>your.email@example.com</span>
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              class="contact-btn"
+              href="https://github.com/yourusername"
+            >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              class="contact-btn"
+              href="#wechat"
+            >
+              <i class="fab fa-weixin"></i>
+              <span>微信公众号</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- **** Footer Section **** -->
+    <footer class="footer navbar-static-bottom">
+      <div class="container">
+        <a rel="noreferrer" href="#top" class="back-to-top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a rel="noreferrer" href="https://github.com/yourusername" target="_blank">
+            <i class="fab fa-github fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="https://instagram.com/yourusername" target="_blank">
+            <i class="fab fa-instagram fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="#wechat" title="微信公众号">
+            <i class="fab fa-weixin fa-inverse"></i>
+          </a>
+          <a rel="noreferrer" href="mailto:your.email@example.com">
+            <i class="fas fa-envelope fa-inverse"></i>
+          </a>
+        </div>
+
+        <hr />
+
+        <p class="footer__text">
+          © 2024 你的名字. All rights reserved.
+        </p>
+        <p class="footer__text mt-2">
+          <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> and <i class="fas fa-camera"></i>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script defer type="module" src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+#photography {
+  background-color: $white-color;
+  padding: 10rem 0;
+  
+  .section-title {
+    color: $dark-blue-text;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    color: $dark-grey;
+    margin-bottom: 4rem;
+  }
+}
+
+// Photo filter buttons
+.photo-filter {
+  margin-bottom: 4rem;
+  
+  .filter-btn {
+    background: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    padding: 0.8rem 2.5rem;
+    margin: 0 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:hover,
+    &.active {
+      background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+      color: $white-color;
+      border-color: transparent;
+    }
+  }
+}
+
+// Photo gallery grid
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  
+  @include respond(phone) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.photo-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  aspect-ratio: 4/3;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    
+    .photo-info {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    img {
+      transform: scale(1.1);
+    }
+  }
+  
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+  
+  .photo-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .photo-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: $white-color;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    text-align: left;
+    
+    h4 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      font-size: 1.3rem;
+      opacity: 0.8;
+      margin-bottom: 0.3rem;
+    }
+    
+    .photo-date {
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+  }
+}
+
+// Lightbox customization
+.lb-data {
+  .lb-caption {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  
+  .lb-number {
+    font-size: 1.4rem;
+  }
+}
+
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+  opacity: 0.8;
+}

@@ -1,0 +1,98 @@
+// General section styles
+section {
+  min-height: auto;
+  padding: 8rem 0;
+}
+
+// Navigation
+#mainNav {
+  background-color: transparent;
+  transition: all 0.3s;
+  padding: 1rem 0;
+  
+  &.scrolled {
+    background-color: rgba(39, 35, 65, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 2rem;
+    color: $white-color;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    margin-left: 1.5rem;
+    transition: all 0.3s;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+    
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+// Contact buttons in contact section
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: $white-color;
+  color: $dark-blue-text;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  
+  i {
+    font-size: 2rem;
+    color: $primary-color;
+  }
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+// Project tech badges
+.project-tech {
+  margin-bottom: 1.5rem;
+  
+  .tech-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+    color: $white-color;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
