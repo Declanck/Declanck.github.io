@@ -1,109 +1,84 @@
-# 个人主页 - 代码与光影
+# Declan 个人网站
 
-这是一个基于 GitHub Pages 的个人作品集网站，展示我的技术项目、微信公众号和摄影作品。
+基于 Astro 构建的现代化个人网站，支持 Markdown 博客、SEO 优化和自动部署。
 
-## 🌟 功能特点
+## 技术栈
 
-- **响应式设计** - 完美适配桌面和移动设备
-- **微信公众号展示** - 展示公众号二维码和内容分类
-- **摄影作品画廊** - 支持分类筛选和灯箱浏览
-- **平滑动画** - ScrollReveal 滚动动画效果
-- **作品展示** - 项目介绍和技术栈标签
+- **框架**: Astro 6
+- **内容**: Markdown + MDX
+- **样式**: SCSS
+- **部署**: GitHub Pages
+- **评论**: giscus / Waline（可配置）
 
-## 🚀 快速开始
-
-### 1. Fork 或克隆仓库
+## 快速开始
 
 ```bash
-git clone https://github.com/yourusername/yourusername.github.io.git
-cd yourusername.github.io
-```
-
-### 2. 安装依赖
-
-```bash
+# 安装依赖
 npm install
-```
 
-### 3. 本地开发
+# 本地开发
+npm run dev
 
-```bash
-npm start
-```
-
-### 4. 构建
-
-```bash
+# 构建生产版本
 npm run build
+
+# 预览构建结果
+npm run preview
 ```
 
-## 📝 自定义内容
+## 目录结构
 
-### 修改个人信息
+```
+astro-src/
+├── src/
+│   ├── components/     # Astro 组件（Hero, About, 摄影等）
+│   ├── layouts/        # 页面布局
+│   ├── pages/          # 页面路由
+│   │   └── blog/       # 博客文章
+│   ├── styles/         # 全局样式
+│   └── content/        # 内容集合（Markdown 文件）
+├── public/             # 静态资源
+└── dist/              # 构建产物
+```
 
-编辑 `src/index.html` 文件：
+## 添加博客文章
 
-1. **Hero 区域** - 修改姓名和介绍
-2. **About 区域** - 上传你的头像到 `assets/profile.jpg`
-3. **公众号** - 上传公众号二维码到 `assets/wechat-qr.png`
-4. **摄影作品** - 上传照片到 `assets/photography/` 目录
-5. **项目** - 修改项目信息和链接
+在 `src/content/blog/` 目录下添加 `.md` 文件：
 
-### 替换图片
-
-| 文件路径 | 说明 |
-|---------|------|
-| `assets/profile.jpg` | 个人头像 |
-| `assets/wechat-qr.png` | 公众号二维码 |
-| `assets/photography/photo1.jpg` | 摄影作品大图 |
-| `assets/photography/photo1-thumb.jpg` | 摄影作品缩略图 |
-| `assets/project.jpg` | 项目截图 |
-
-### 摄影作品命名规范
-
-- 大图：`photo1.jpg`, `photo2.jpg`, ...
-- 缩略图：`photo1-thumb.jpg`, `photo2-thumb.jpg`, ...
-- 推荐尺寸：大图 1200x900，缩略图 400x300
-
-## 🎨 自定义样式
-
-样式文件位于 `src/sass/` 目录：
-
-- `abstracts/_variables.scss` - 颜色变量
-- `sections/` - 各部分的样式
-
-## 📦 部署到 GitHub Pages
-
-### 方法一：GitHub Actions 自动部署
-
-1. 在 GitHub 仓库设置中启用 GitHub Pages
-2. 选择 Source 为 "GitHub Actions"
-3. 推送代码到 main 分支，自动部署
-
-### 方法二：手动部署
-
-1. 构建项目：`npm run build`
-2. 将 `dist` 目录内容推送到 `gh-pages` 分支
-
-## 🛠️ 技术栈
-
-- [Parcel](https://parceljs.org/) - 构建工具
-- [Bootstrap 5](https://getbootstrap.com/) - CSS 框架
-- [ScrollReveal](https://scrollrevealjs.org/) - 滚动动画
-- [Lightbox2](https://lokeshdhakar.com/projects/lightbox2/) - 图片灯箱
-- [Vanilla Tilt](https://micku7zu.github.io/vanilla-tilt.js/) - 3D 倾斜效果
-- [Font Awesome](https://fontawesome.com/) - 图标
-
-## 📄 许可证
-
-MIT License - 详见 [LICENSE](LICENSE) 文件
-
-## 💬 联系方式
-
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-- 微信公众号: 你的公众号名称
-
+```markdown
+---
+title: "文章标题"
+description: "文章描述"
+pubDate: 2026-05-06
+tags: ["标签1", "标签2"]
+heroImage: "/assets/cover.jpg"
 ---
 
-Made with ❤️ and 📷
+正文内容...
+```
+
+## 评论系统配置
+
+### giscus（推荐，基于 GitHub Discussions）
+
+1. 在 GitHub 仓库启用 Discussions
+2. 访问 https://giscus.app 获取配置脚本
+3. 在博客文章页面添加 giscus embed 代码
+
+### Waline
+
+1. 注册 [Vercel](https://vercel.com) 并部署 Waline 服务端
+2. 获取 App ID 和 App Key
+3. 在 `src/layouts/BaseLayout.astro` 中添加 Waline 脚本
+
+## 部署
+
+推送到 `main` 分支后，GitHub Actions 会自动构建并部署到 GitHub Pages。
+
+确保仓库 Settings → Pages → Source 设置为 "GitHub Actions"。
+
+## 自定义
+
+- 修改 `src/components/` 中的组件来更新各板块内容
+- 修改 `src/styles/global.scss` 调整全局样式
+- 修改 `astro.config.mjs` 中的 `site` 字段为你的网站 URL

@@ -1,0 +1,53 @@
+---
+const skills = [
+  '产品经理',
+  'Python',
+  'AI工具',
+  '数据分析',
+  'React',
+  'Node.js',
+];
+---
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title load-hidden">关于我</h2>
+    <div class="row about-wrapper">
+      <div class="col-md-6 col-sm-12">
+        <div class="about-wrapper__image load-hidden">
+          <img
+            alt="Profile Image"
+            class="img-fluid rounded shadow-lg"
+            src="/assets/profile.jpg"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="about-wrapper__info load-hidden">
+          <p class="about-wrapper__info-text">
+            哈啰，大家好，我是Declan，本科毕业清华大学化工系，硕士就读于香港大学商业分析专业。我的本心追求的是真实，连接和创造。
+          </p>
+          <p class="about-wrapper__info-text">
+            计划利用自媒体作为杠杆推广自己开发的产品。喜爱各类电影、电视剧等影视作品，目前正在练习架子鼓，焦虑症康复中。希望有机会和大家一起交流创造
+          </p>
+          <div class="about-skills">
+            <h4>技能标签</h4>
+            <div class="skill-tags">
+              {skills.map((skill) => <span class="skill-tag">{skill}</span>)}
+            </div>
+          </div>
+          <span class="d-flex mt-4">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              class="cta-btn cta-btn--resume"
+              href="https://github.com/Declanck"
+            >
+              查看 GitHub
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

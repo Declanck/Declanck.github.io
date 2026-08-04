@@ -1,0 +1,117 @@
+---
+const photos = [
+  {
+    src: '/assets/photography/photo1.jpg',
+    thumb: '/assets/photography/photo1-thumb.jpg',
+    title: '山川日落',
+    camera: 'Shot on Sony A7M3',
+    date: '2024.01',
+    category: 'landscape',
+  },
+  {
+    src: '/assets/photography/photo2.jpg',
+    thumb: '/assets/photography/photo2-thumb.jpg',
+    title: '光影人像',
+    camera: 'Shot on Canon R6',
+    date: '2024.02',
+    category: 'portrait',
+  },
+  {
+    src: '/assets/photography/b39be139a9fd73bdb2a124cc0fab2d0b.jpg',
+    thumb: '/assets/photography/b39be139a9fd73bdb2a124cc0fab2d0b.jpg',
+    title: '城市夜景',
+    camera: 'Shot on Sony A7M3',
+    date: '2024.03',
+    category: 'street',
+  },
+  {
+    src: '/assets/photography/bd3736d6728149c4f56fc4237ad3e73f.jpg',
+    thumb: '/assets/photography/bd3736d6728149c4f56fc4237ad3e73f.jpg',
+    title: '自然风光',
+    camera: 'Shot on Sony A7M3',
+    date: '2024.04',
+    category: 'nature',
+  },
+];
+
+const categories = [
+  { key: 'all', label: '全部' },
+  { key: 'landscape', label: '风景' },
+  { key: 'portrait', label: '人像' },
+  { key: 'street', label: '街拍' },
+  { key: 'nature', label: '自然' },
+];
+---
+
+<section id="photography" class="section-photography">
+  <div class="container">
+    <h2 class="section-title load-hidden">摄影作品</h2>
+    <p class="section-subtitle load-hidden">用镜头记录世界的美好</p>
+
+    <!-- Photo Filter -->
+    <div class="photo-filter load-hidden" id="photoFilter">
+      {categories.map((cat) => (
+        <button
+          class={`filter-btn ${cat.key === 'all' ? 'active' : ''}`}
+          data-filter={cat.key}
+        >
+          {cat.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="photo-gallery" id="photoGallery">
+      {photos.map((photo) => (
+        <div class="photo-item" data-category={photo.category}>
+          <a
+            href={photo.src}
+            data-lightbox="gallery"
+            data-title={photo.title}
+          >
+            <div class="photo-overlay">
+              <img src={photo.thumb} alt={photo.title} />
+              <div class="photo-info">
+                <h4>{photo.title}</h4>
+                <p>{photo.camera}</p>
+                <span class="photo-date">{photo.date}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-5 load-hidden">
+      <a
+        rel="noreferrer"
+        target="_blank"
+        class="cta-btn cta-btn--hero"
+        href="https://instagram.com/yourusername"
+      >
+        <i class="fab fa-instagram"></i> 查看更多作品
+      </a>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Photo filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const photoItems = document.querySelectorAll('.photo-item');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      photoItems.forEach((item) => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={`${post.data.title} | Declan`} description={post.data.description}>
+  <article class="blog-post">
+    <header class="blog-post__header">
+      <div class="container">
+        <div class="blog-post__meta">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('zh-CN', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          {post.data.tags && (
+            <div class="blog-post__tags">
+              {post.data.tags.map((tag: string) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+        <h1 class="blog-post__title">{post.data.title}</h1>
+        {post.data.description && (
+          <p class="blog-post__description">{post.data.description}</p>
+        )}
+        {post.data.heroImage && (
+          <div class="blog-post__hero">
+            <img src={post.data.heroImage} alt={post.data.title} />
+          </div>
+        )}
+      </div>
+    </header>
+
+    <div class="blog-post__body">
+      <div class="container">
+        <div class="blog-post__content prose">
+          <Content />
+        </div>
+
+        <hr class="blog-post__divider" />
+
+        <!-- Comments section -->
+        <div class="blog-post__comments">
+          <h3><i class="fas fa-comments"></i> 评论区</h3>
+          <div id="comments" class="comment-box">
+            <p class="comment-hint">
+              <i class="fas fa-info-circle"></i>
+              评论区配置说明：在 GitHub Discussions 启用 giscus，或配置 Waline 评论服务
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-post__nav container">
+      <a href="/blog" class="back-link">
+        <i class="fas fa-arrow-left"></i> 返回博客列表
+      </a>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="博客 | Declan" description="Declan 的博客 - 记录产品思考、AI探索与生活感悟">
+  <section class="blog-hero">
+    <div class="container">
+      <h1 class="section-title">博客文章</h1>
+      <p class="section-subtitle">产品思考 / AI探索 / 生活感悟</p>
+    </div>
+  </section>
+
+  <section class="blog-list-section">
+    <div class="container">
+      {posts.length === 0 ? (
+        <p class="empty-state">博客正在建设中，敬请期待...</p>
+      ) : (
+        <div class="row">
+          {posts.map((post) => (
+            <div class="col-md-6 col-lg-4 mb-4">
+              <article class="blog-card">
+                {post.data.heroImage && (
+                  <div class="blog-card__image">
+                    <img src={post.data.heroImage} alt={post.data.title} />
+                  </div>
+                )}
+                <div class="blog-card__content">
+                  <div class="blog-card__meta">
+                    <time datetime={post.data.pubDate.toISOString()}>
+                      {post.data.pubDate.toLocaleDateString('zh-CN', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </time>
+                    {post.data.tags && (
+                      <span class="blog-card__tags">
+                        {post.data.tags.map((tag: string) => (
+                          <span class="tag">{tag}</span>
+                        ))}
+                      </span>
+                    )}
+                  </div>
+                  <h2 class="blog-card__title">
+                    <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                  </h2>
+                  <p class="blog-card__description">{post.data.description}</p>
+                  <a href={`/blog/${post.id}/`} class="blog-card__link">
+                    阅读全文
+                    <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Comment placeholder (giscus/waline can be added here) -->
+  <section class="blog-comments">
+    <div class="container">
+      <div id="comment-placeholder" class="comment-box">
+        <p><i class="fas fa-comments"></i> 使用 GitHub 账号登录后可在评论区留言</p>
+        <p class="comment-hint">评论系统配置说明：在 GitHub 仓库的 Settings → Pages 中启用 giscus，或配置 Waline</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

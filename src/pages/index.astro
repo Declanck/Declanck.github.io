@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import WeChat from '../components/WeChat.astro';
+import Photography from '../components/Photography.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<BaseLayout title="Declan | AI时代奋斗者">
+  <Hero />
+  <About />
+  <WeChat />
+  <Photography />
+  <Projects />
+  <Contact />
+</BaseLayout>
+
+<script is:inline>
+  // Scroll Reveal
+  if (typeof ScrollReveal !== 'undefined') {
+    ScrollReveal().reveal('.load-hidden', {
+      easing: 'cubic-bezier(0.5, 0, 0, 1)',
+      distance: '30px',
+      duration: 1000,
+      desktop: true,
+      mobile: true,
+    });
+  }
+
+  // Lightbox config
+  if (typeof lightbox !== 'undefined') {
+    lightbox.option({
+      resizeDuration: 200,
+      wrapAround: true,
+      showImageNumberLabel: false,
+      fadeDuration: 300,
+    });
+  }
+</script>

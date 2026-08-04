@@ -1,25 +1,20 @@
 {
-  "name": "personal-website",
+  "name": "declan-personal-site",
+  "type": "module",
   "version": "1.0.0",
-  "private": true,
-  "description": "Personal portfolio website with WeChat and Photography showcase",
-  "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yourusername/yourusername.github.io"
-  },
-  "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.8.2",
-    "parcel": "^2.8.2"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "vanilla-tilt": "^1.8.0"
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.2.2"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.100.0"
   }
 }

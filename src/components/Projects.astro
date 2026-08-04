@@ -1,0 +1,77 @@
+---
+const projects = [
+  {
+    title: '个人博客系统',
+    description:
+      '基于 React + Node.js 开发的个人博客系统，支持 Markdown 编辑、代码高亮、评论系统等功能。采用响应式设计，适配各种设备。',
+    tech: ['React', 'Node.js', 'MongoDB'],
+    demoUrl: 'https://your-blog-demo.com',
+    repoUrl: 'https://github.com/Declanck/blog',
+    image: '/assets/project.jpg',
+  },
+  {
+    title: '图片管理工具',
+    description:
+      '为摄影师开发的图片管理工具，支持 EXIF 信息读取、批量重命名、快速筛选等功能。帮助摄影师高效管理海量照片。',
+    tech: ['Python', 'PyQt', 'OpenCV'],
+    demoUrl: 'https://github.com/Declanck/photo-manager/releases',
+    repoUrl: 'https://github.com/Declanck/photo-manager',
+    image: '/assets/project.jpg',
+  },
+];
+---
+
+<section id="projects">
+  <div class="container">
+    <div class="project-wrapper">
+      <h2 class="section-title dark-blue-text">项目作品</h2>
+
+      {projects.map((project, index) => (
+        <div class="row">
+          <div class="col-lg-4 col-sm-12">
+            <div class="project-wrapper__text load-hidden">
+              <h3 class="project-wrapper__text-title">{project.title}</h3>
+              <div>
+                <p class="mb-4">{project.description}</p>
+              </div>
+              <div class="project-tech">
+                {project.tech.map((t) => (
+                  <span class="tech-badge">{t}</span>
+                ))}
+              </div>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                class="cta-btn cta-btn--hero"
+                href={project.demoUrl}
+              >
+                查看演示
+              </a>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                class="cta-btn text-color-main"
+                href={project.repoUrl}
+              >
+                源码
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-sm-12">
+            <div class="project-wrapper__image load-hidden">
+              <a rel="noreferrer" href={project.demoUrl} target="_blank">
+                <div class="thumbnail rounded">
+                  <img
+                    alt="Project Image"
+                    class="img-fluid"
+                    src={project.image}
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
